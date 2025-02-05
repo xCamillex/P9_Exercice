@@ -19,12 +19,20 @@ class Case1Activity : AppCompatActivity() {
         binding.addButton.setOnClickListener {
             quantity++
             binding.quantityText.text = "$quantity"
+            // Annonce la quantité mise à jour
+            binding.quantityText.announceForAccessibility(
+                getString(R.string.quantity_updated, quantity)
+            )
         }
 
         binding.removeButton.setOnClickListener {
             if (quantity > 0) {
                 quantity--
                 binding.quantityText.text = "$quantity"
+                // Annonce la quantité mise à jour
+                binding.quantityText.announceForAccessibility(
+                    getString(R.string.quantity_updated, quantity)
+                )
             } else {
                 Toast.makeText(this, getString(R.string.impossible_d_avoir_une_quantit_n_gative), Toast.LENGTH_SHORT)
                     .show()
