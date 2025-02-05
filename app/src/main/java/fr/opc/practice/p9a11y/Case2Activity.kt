@@ -34,8 +34,13 @@ class Case2Activity : AppCompatActivity() {
     private fun setFavouriteButtonIcon(isFavourite: Boolean) {
         if (isFavourite) {
             binding.favouriteButton.setImageResource(R.drawable.ic_favourite_on)
+            binding.favouriteButton.announceForAccessibility(getString(R.string.addedToFavoritesMessage))
+            binding.favouriteButton.contentDescription = getString(R.string.removeFromFavoritesDescription)
+
         } else {
             binding.favouriteButton.setImageResource(R.drawable.ic_favourite_off)
+            binding.favouriteButton.announceForAccessibility(getString(R.string.removedFromFavoritesMessage))
+            binding.favouriteButton.contentDescription = getString(R.string.addToFavoritesDescription)
         }
     }
 }
