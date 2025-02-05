@@ -10,32 +10,40 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/cas_3"
-        style="@style/TextAppearance.MaterialComponents.Headline2"
         android:layout_gravity="center_horizontal"
-        />
-
+        android:textSize="40sp"/>
 
     <TextView
+        android:id="@+id/pseudoTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/pseudo"
         style="@style/TextAppearance.MaterialComponents.Body1"
-
-        />
+        android:textSize="16sp"
+        android:labelFor="@+id/pseudoEdit"/>
 
     <EditText
         android:id="@+id/pseudoEdit"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:inputType="text"
+        android:textSize="16sp"
+        android:autofillHints="username"
         />
+
+    <TextView
+        android:id="@+id/pseudoValidation"
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp" />
 
     <Button
         android:id="@+id/validateButton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_gravity="center"
         android:text="@string/validate"
-        />
+        android:textSize="16sp"/>
 
 </LinearLayout>

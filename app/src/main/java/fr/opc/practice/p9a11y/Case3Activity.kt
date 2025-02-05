@@ -17,14 +17,22 @@ class Case3Activity : AppCompatActivity() {
 
         binding.pseudoEdit.doOnTextChanged { text, _, _, _ ->
             text?.length?.let { textLength ->
-                binding.validateButton.isEnabled = textLength > 2
-                binding.pseudoEdit.backgroundTintList = if (textLength > 2) {
-                    ColorStateList.valueOf(resources.getColor(R.color.green400, theme))
+                if (textLength < 3) {
+                    binding.validateButton.isEnabled = false
+                    binding.pseudoEdit.backgroundTintList = ColorStateList.valueOf(
+                        resources.getColor(R.color.red400, theme)
+                    )
+                    binding.pseudoValidation.setText(R.string.nameMinimalLength)
+                    binding.pseudoEdit.announceForAccessibility(getString(R.string.nameMinimalLength))
                 } else {
-                    ColorStateList.valueOf(resources.getColor(R.color.red400, theme))
+                    binding.validateButton.isEnabled = true
+                    binding.pseudoEdit.backgroundTintList = ColorStateList.valueOf(
+                        resources.getColor(R.color.green400, theme)
+                    )
+                    binding.pseudoValidation.setText(R.string.nameValid)
+                    binding.pseudoEdit.announceForAccessibility(getString(R.string.nameValid))
                 }
             }
         }
-        binding.validateButton.isEnabled = false
     }
 }
