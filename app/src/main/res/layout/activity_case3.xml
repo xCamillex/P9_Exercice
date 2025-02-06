@@ -41,7 +41,7 @@
     <Button
         android:id="@+id/validateButton"
         android:layout_width="wrap_content"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/validate"
         android:textSize="16sp"/>
